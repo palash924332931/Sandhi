@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LoanAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'IS_SandhiOrg_dt.dbo.vwGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="CustomerID" Type="bigint" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="GroupID" Type="bigint" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CsrID" Type="int" />
+          <Property Name="RegNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupPrevNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VillageWardNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="LandMark" Type="nvarchar" MaxLength="200" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MeetingDate" Type="datetime" />
+          <Property Name="MeetingPlace" Type="nvarchar" MaxLength="200" />
+          <Property Name="UnitNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveStatus" Type="int" />
+          <Property Name="DeleteStatus" Type="int" />
+        </EntityType>
+        <Function Name="prcAccounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountsID" Type="bigint" Mode="In" />
+          <Parameter Name="AccountsHeadID" Type="bigint" Mode="In" />
+          <Parameter Name="AccountsDescription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="AccountsDate" Type="datetime" Mode="In" />
+          <Parameter Name="AccountsAmount" Type="decimal" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcAccountsHead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AccountsHeadID" Type="int" Mode="In" />
+          <Parameter Name="AccountsHead" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BankID" Type="int" Mode="In" />
+          <Parameter Name="BankName" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcChangeAdminPass" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Pass" Type="nvarchar" Mode="In" />
+          <Parameter Name="Response" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcClearData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="prcCSR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CsrID" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOJ" Type="datetime" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="DOJ" Type="datetime" Mode="In" />
+          <Parameter Name="CustomerNo" Type="bigint" Mode="In" />
+          <Parameter Name="FormNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AlliasName" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Religion" Type="nvarchar" Mode="In" />
+          <Parameter Name="Caste" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaritalStatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgeProofCertificate" Type="nvarchar" Mode="In" />
+          <Parameter Name="AgeProofCertificateNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+          <Parameter Name="DocumentNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="FatherName" Type="nvarchar" Mode="In" />
+          <Parameter Name="QualificationID" Type="int" Mode="In" />
+          <Parameter Name="OccupationID" Type="int" Mode="In" />
+          <Parameter Name="Occupation" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcCustomerBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="AccountName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AccountNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BankName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IFSC" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcCustomerCoBorrower" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Relation" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+          <Parameter Name="DocumentNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcCustomerContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="PresentAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="State" Type="nvarchar" Mode="In" />
+          <Parameter Name="District" Type="nvarchar" Mode="In" />
+          <Parameter Name="City" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pincode" Type="nvarchar" Mode="In" />
+          <Parameter Name="PostOffice" Type="nvarchar" Mode="In" />
+          <Parameter Name="PoliceStation" Type="nvarchar" Mode="In" />
+          <Parameter Name="Block" Type="nvarchar" Mode="In" />
+          <Parameter Name="WardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="PermanentAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="LandLineNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcCustomerGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="GroupID" Type="bigint" Mode="In" />
+          <Parameter Name="CsrID" Type="bigint" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcCustomerHouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="HouseType" Type="nvarchar" Mode="In" />
+          <Parameter Name="HouseNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="Extent" Type="nvarchar" Mode="In" />
+          <Parameter Name="PlotNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoomType" Type="nvarchar" Mode="In" />
+          <Parameter Name="Rooms" Type="int" Mode="In" />
+          <Parameter Name="Valuation" Type="nvarchar" Mode="In" />
+          <Parameter Name="FamilyMembers" Type="int" Mode="In" />
+          <Parameter Name="MonthlyExpense" Type="nvarchar" Mode="In" />
+          <Parameter Name="YearlyFestiveExpense" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcCustomerInsuredPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Relation" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+          <Parameter Name="DocumentNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DocumentID" Type="int" Mode="In" />
+          <Parameter Name="DocumentName" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcExpense" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExpenseID" Type="bigint" Mode="In" />
+          <Parameter Name="ExpenseHeadID" Type="bigint" Mode="In" />
+          <Parameter Name="ExpenseDescription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ExpenseDate" Type="datetime" Mode="In" />
+          <Parameter Name="ExpenseAmount" Type="decimal" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcExpenseHead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExpenseHeadID" Type="int" Mode="In" />
+          <Parameter Name="ExpenseHead" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="GroupID" Type="bigint" Mode="In" />
+          <Parameter Name="GroupName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CsrID" Type="int" Mode="In" />
+          <Parameter Name="RegNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="GroupPrevNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="VillageWardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="LandMark" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="MeetingDate" Type="datetime" Mode="In" />
+          <Parameter Name="MeetingPlace" Type="nvarchar" Mode="In" />
+          <Parameter Name="UnitNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="bigint" Mode="In" />
+          <Parameter Name="GroupID" Type="bigint" Mode="In" />
+          <Parameter Name="CsrID" Type="bigint" Mode="In" />
+          <Parameter Name="UnitNo" Type="int" Mode="In" />
+          <Parameter Name="ApplyDate" Type="datetime" Mode="In" />
+          <Parameter Name="SanctionDate" Type="datetime" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+          <Parameter Name="LoanPurposeTypeID" Type="int" Mode="In" />
+          <Parameter Name="LoanFunderTypeID" Type="int" Mode="In" />
+          <Parameter Name="RateID" Type="int" Mode="In" />
+          <Parameter Name="Rate" Type="decimal" Mode="In" />
+          <Parameter Name="Weeks" Type="int" Mode="In" />
+          <Parameter Name="Installment" Type="decimal" Mode="In" />
+          <Parameter Name="StartingDate" Type="datetime" Mode="In" />
+          <Parameter Name="PaymentDuration" Type="int" Mode="In" />
+          <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Remarks" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcLoanFunderType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoanFunderTypeID" Type="int" Mode="In" />
+          <Parameter Name="LoanFunderType" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcLoanPurposeType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoanPurposeTypeID" Type="int" Mode="In" />
+          <Parameter Name="LoanPurposeType" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberID" Type="bigint" Mode="In" />
+          <Parameter Name="MemberTypeID" Type="int" Mode="In" />
+          <Parameter Name="DOJ" Type="datetime" Mode="In" />
+          <Parameter Name="MembershipNo" Type="bigint" Mode="In" />
+          <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+          <Parameter Name="FathersName" Type="nvarchar" Mode="In" />
+          <Parameter Name="MotherMaidenName" Type="nvarchar" Mode="In" />
+          <Parameter Name="SpouseName" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaritalStatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="BloodGroup" Type="nvarchar" Mode="In" />
+          <Parameter Name="AadharCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="VoterCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="PAN" Type="nvarchar" Mode="In" />
+          <Parameter Name="OccupationID" Type="int" Mode="In" />
+          <Parameter Name="Occupation" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcMemberBank" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberID" Type="bigint" Mode="In" />
+          <Parameter Name="AccountName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AccountNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BankName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IFSC" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcMemberNominee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MemberID" Type="bigint" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Age" Type="nvarchar" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="RelationID" Type="int" Mode="In" />
+          <Parameter Name="AadharCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="VoterCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="PAN" Type="nvarchar" Mode="In" />
+          <Parameter Name="RationCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="DrivingLicenceNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+        </Function>
+        <Function Name="prcMemberTransaction" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Slno" Type="bigint" Mode="In" />
+          <Parameter Name="MemberID" Type="bigint" Mode="In" />
+          <Parameter Name="Amount" Type="decimal" Mode="In" />
+          <Parameter Name="Remarks" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+          <Parameter Name="TransactionDate" Type="datetime" Mode="In" />
+          <Parameter Name="Type" Type="int" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcProcessLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoanID" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="prcProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+          <Parameter Name="ProductName" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcQualification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="QualificationID" Type="int" Mode="In" />
+          <Parameter Name="Qualification" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcRateOfInterest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RateID" Type="int" Mode="In" />
+          <Parameter Name="Weeks" Type="int" Mode="In" />
+          <Parameter Name="RateOfInterest" Type="decimal" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcRecoverLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LoanID" Type="bigint" Mode="In" />
+          <Parameter Name="PaidDate" Type="datetime" Mode="In" />
+          <Parameter Name="FineAmount" Type="decimal" Mode="In" />
+          <Parameter Name="NoOfInstallment" Type="int" Mode="In" />
+          <Parameter Name="LeftInstallment" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcRecoverMultipleLoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PaidDate" Type="datetime" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prcRelation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RelationID" Type="int" Mode="In" />
+          <Parameter Name="RelationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="BtnStatus" Type="int" Mode="In" />
+          <Parameter Name="ErrorResponse" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="prGetCustomertLis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustomerID" Type="nvarchar" Mode="In" />
+          <Parameter Name="FormNo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="prGetEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="type" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="prGetGroupDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Type" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="LoanAppModelStoreContainer">
+          <EntitySet Name="vwGroup" EntityType="Self.vwGroup" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwGroup].[CustomerID] AS [CustomerID], 
+[vwGroup].[Name] AS [Name], 
+[vwGroup].[GroupID] AS [GroupID], 
+[vwGroup].[GroupName] AS [GroupName], 
+[vwGroup].[CsrID] AS [CsrID], 
+[vwGroup].[RegNo] AS [RegNo], 
+[vwGroup].[GroupPrevNo] AS [GroupPrevNo], 
+[vwGroup].[VillageWardNo] AS [VillageWardNo], 
+[vwGroup].[LandMark] AS [LandMark], 
+[vwGroup].[MobileNo] AS [MobileNo], 
+[vwGroup].[MeetingDate] AS [MeetingDate], 
+[vwGroup].[MeetingPlace] AS [MeetingPlace], 
+[vwGroup].[UnitNo] AS [UnitNo], 
+[vwGroup].[ActiveStatus] AS [ActiveStatus], 
+[vwGroup].[DeleteStatus] AS [DeleteStatus]
+FROM [dbo].[vwGroup] AS [vwGroup]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LoanAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vwGroup">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GroupID" Type="Int64" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CsrID" Type="Int32" />
+          <Property Name="RegNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GroupPrevNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VillageWardNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LandMark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MeetingDate" Type="DateTime" Precision="3" />
+          <Property Name="MeetingPlace" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UnitNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveStatus" Type="Int32" />
+          <Property Name="DeleteStatus" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="LoanAPPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vwGroups" EntityType="Self.vwGroup" />
+          <FunctionImport Name="prcAccounts">
+            <Parameter Name="AccountsID" Mode="In" Type="Int64" />
+            <Parameter Name="AccountsHeadID" Mode="In" Type="Int64" />
+            <Parameter Name="AccountsDescription" Mode="In" Type="String" />
+            <Parameter Name="AccountsDate" Mode="In" Type="DateTime" />
+            <Parameter Name="AccountsAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcAccountsHead">
+            <Parameter Name="AccountsHeadID" Mode="In" Type="Int32" />
+            <Parameter Name="AccountsHead" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcBank">
+            <Parameter Name="BankID" Mode="In" Type="Int32" />
+            <Parameter Name="BankName" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcChangeAdminPass">
+            <Parameter Name="Pass" Mode="In" Type="String" />
+            <Parameter Name="Response" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcClearData" />
+          <FunctionImport Name="prcCSR">
+            <Parameter Name="CsrID" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="DOJ" Mode="In" Type="DateTime" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomer">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="DOJ" Mode="In" Type="DateTime" />
+            <Parameter Name="CustomerNo" Mode="In" Type="Int64" />
+            <Parameter Name="FormNo" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="AlliasName" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="Religion" Mode="In" Type="String" />
+            <Parameter Name="Caste" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="MaritalStatus" Mode="In" Type="String" />
+            <Parameter Name="AgeProofCertificate" Mode="In" Type="String" />
+            <Parameter Name="AgeProofCertificateNo" Mode="In" Type="String" />
+            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentNo" Mode="In" Type="String" />
+            <Parameter Name="FatherName" Mode="In" Type="String" />
+            <Parameter Name="QualificationID" Mode="In" Type="Int32" />
+            <Parameter Name="OccupationID" Mode="In" Type="Int32" />
+            <Parameter Name="Occupation" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerBank">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="AccountName" Mode="In" Type="String" />
+            <Parameter Name="AccountNo" Mode="In" Type="String" />
+            <Parameter Name="BankName" Mode="In" Type="String" />
+            <Parameter Name="IFSC" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerCoBorrower">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Relation" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerContact">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="PresentAddress" Mode="In" Type="String" />
+            <Parameter Name="State" Mode="In" Type="String" />
+            <Parameter Name="District" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="Pincode" Mode="In" Type="String" />
+            <Parameter Name="PostOffice" Mode="In" Type="String" />
+            <Parameter Name="PoliceStation" Mode="In" Type="String" />
+            <Parameter Name="Block" Mode="In" Type="String" />
+            <Parameter Name="WardNo" Mode="In" Type="String" />
+            <Parameter Name="PermanentAddress" Mode="In" Type="String" />
+            <Parameter Name="MobileNo" Mode="In" Type="String" />
+            <Parameter Name="LandLineNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerGroup">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="GroupID" Mode="In" Type="Int64" />
+            <Parameter Name="CsrID" Mode="In" Type="Int64" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerHouse">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="HouseType" Mode="In" Type="String" />
+            <Parameter Name="HouseNo" Mode="In" Type="String" />
+            <Parameter Name="Extent" Mode="In" Type="String" />
+            <Parameter Name="PlotNo" Mode="In" Type="String" />
+            <Parameter Name="RoomType" Mode="In" Type="String" />
+            <Parameter Name="Rooms" Mode="In" Type="Int32" />
+            <Parameter Name="Valuation" Mode="In" Type="String" />
+            <Parameter Name="FamilyMembers" Mode="In" Type="Int32" />
+            <Parameter Name="MonthlyExpense" Mode="In" Type="String" />
+            <Parameter Name="YearlyFestiveExpense" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcCustomerInsuredPerson">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Relation" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcDocument">
+            <Parameter Name="DocumentID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentName" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcExpense">
+            <Parameter Name="ExpenseID" Mode="In" Type="Int64" />
+            <Parameter Name="ExpenseHeadID" Mode="In" Type="Int64" />
+            <Parameter Name="ExpenseDescription" Mode="In" Type="String" />
+            <Parameter Name="ExpenseDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ExpenseAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcExpenseHead">
+            <Parameter Name="ExpenseHeadID" Mode="In" Type="Int32" />
+            <Parameter Name="ExpenseHead" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcGroup">
+            <Parameter Name="GroupID" Mode="In" Type="Int64" />
+            <Parameter Name="GroupName" Mode="In" Type="String" />
+            <Parameter Name="CsrID" Mode="In" Type="Int32" />
+            <Parameter Name="RegNo" Mode="In" Type="String" />
+            <Parameter Name="GroupPrevNo" Mode="In" Type="String" />
+            <Parameter Name="VillageWardNo" Mode="In" Type="String" />
+            <Parameter Name="LandMark" Mode="In" Type="String" />
+            <Parameter Name="MobileNo" Mode="In" Type="String" />
+            <Parameter Name="MeetingDate" Mode="In" Type="DateTime" />
+            <Parameter Name="MeetingPlace" Mode="In" Type="String" />
+            <Parameter Name="UnitNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcLoan">
+            <Parameter Name="CustomerID" Mode="In" Type="Int64" />
+            <Parameter Name="GroupID" Mode="In" Type="Int64" />
+            <Parameter Name="CsrID" Mode="In" Type="Int64" />
+            <Parameter Name="UnitNo" Mode="In" Type="Int32" />
+            <Parameter Name="ApplyDate" Mode="In" Type="DateTime" />
+            <Parameter Name="SanctionDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="LoanPurposeTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="LoanFunderTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="RateID" Mode="In" Type="Int32" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Weeks" Mode="In" Type="Int32" />
+            <Parameter Name="Installment" Mode="In" Type="Decimal" />
+            <Parameter Name="StartingDate" Mode="In" Type="DateTime" />
+            <Parameter Name="PaymentDuration" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentMode" Mode="In" Type="String" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcLoanFunderType">
+            <Parameter Name="LoanFunderTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="LoanFunderType" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcLoanPurposeType">
+            <Parameter Name="LoanPurposeTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="LoanPurposeType" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcMember">
+            <Parameter Name="MemberID" Mode="In" Type="Int64" />
+            <Parameter Name="MemberTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DOJ" Mode="In" Type="DateTime" />
+            <Parameter Name="MembershipNo" Mode="In" Type="Int64" />
+            <Parameter Name="FullName" Mode="In" Type="String" />
+            <Parameter Name="FathersName" Mode="In" Type="String" />
+            <Parameter Name="MotherMaidenName" Mode="In" Type="String" />
+            <Parameter Name="SpouseName" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="MaritalStatus" Mode="In" Type="String" />
+            <Parameter Name="BloodGroup" Mode="In" Type="String" />
+            <Parameter Name="AadharCardNo" Mode="In" Type="String" />
+            <Parameter Name="VoterCardNo" Mode="In" Type="String" />
+            <Parameter Name="PAN" Mode="In" Type="String" />
+            <Parameter Name="OccupationID" Mode="In" Type="Int32" />
+            <Parameter Name="Occupation" Mode="In" Type="String" />
+            <Parameter Name="EmailID" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcMemberBank">
+            <Parameter Name="MemberID" Mode="In" Type="Int64" />
+            <Parameter Name="AccountName" Mode="In" Type="String" />
+            <Parameter Name="AccountNo" Mode="In" Type="String" />
+            <Parameter Name="BankName" Mode="In" Type="String" />
+            <Parameter Name="IFSC" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcMemberNominee">
+            <Parameter Name="MemberID" Mode="In" Type="Int64" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="DOB" Mode="In" Type="DateTime" />
+            <Parameter Name="Age" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="RelationID" Mode="In" Type="Int32" />
+            <Parameter Name="AadharCardNo" Mode="In" Type="String" />
+            <Parameter Name="VoterCardNo" Mode="In" Type="String" />
+            <Parameter Name="PAN" Mode="In" Type="String" />
+            <Parameter Name="RationCardNo" Mode="In" Type="String" />
+            <Parameter Name="DrivingLicenceNo" Mode="In" Type="String" />
+            <Parameter Name="EmailID" Mode="In" Type="String" />
+            <Parameter Name="ContactNo" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="prcMemberTransaction">
+            <Parameter Name="Slno" Mode="In" Type="Int64" />
+            <Parameter Name="MemberID" Mode="In" Type="Int64" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="PaymentMode" Mode="In" Type="String" />
+            <Parameter Name="TransactionDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Type" Mode="In" Type="Int32" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcProcessLoan">
+          <Parameter Name="LoanID" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="prcProduct">
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductName" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcQualification">
+            <Parameter Name="QualificationID" Mode="In" Type="Int32" />
+            <Parameter Name="Qualification" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcRateOfInterest">
+            <Parameter Name="RateID" Mode="In" Type="Int32" />
+            <Parameter Name="Weeks" Mode="In" Type="Int32" />
+            <Parameter Name="RateOfInterest" Mode="In" Type="Decimal" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcRecoverLoan">
+            <Parameter Name="LoanID" Mode="In" Type="Int64" />
+            <Parameter Name="PaidDate" Mode="In" Type="DateTime" />
+            <Parameter Name="FineAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="NoOfInstallment" Mode="In" Type="Int32" />
+            <Parameter Name="LeftInstallment" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcRecoverMultipleLoan">
+            <Parameter Name="PaidDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prcRelation">
+            <Parameter Name="RelationID" Mode="In" Type="Int32" />
+            <Parameter Name="RelationName" Mode="In" Type="String" />
+            <Parameter Name="BtnStatus" Mode="In" Type="Int32" />
+            <Parameter Name="ErrorResponse" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prGetCustomertLis" ReturnType="Collection(LoanAppModel.prGetCustomertLis_Result)">
+            <Parameter Name="Type" Mode="In" Type="String" />
+            <Parameter Name="CustomerID" Mode="In" Type="String" />
+            <Parameter Name="FormNo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prGetEmployee" ReturnType="Collection(LoanAppModel.prGetEmployee_Result)">
+          <Parameter Name="type" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prGetGroupDetails" ReturnType="Collection(LoanAppModel.prGetGroupDetails_Result)">
+            <Parameter Name="Type" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="prGetCustomertLis_Result">
+          <Property Type="Int64" Name="CustomerID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerNo" Nullable="true" />
+          <Property Type="String" Name="FormNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+        </ComplexType>
+        <ComplexType Name="prGetEmployee_Result">
+          <Property Type="Int64" Name="CustomerID" Nullable="false" />
+          <Property Type="Int64" Name="CustomerNo" Nullable="true" />
+          <Property Type="String" Name="FormNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="152" />
+        </ComplexType>
+        <ComplexType Name="prGetGroupDetails_Result">
+          <Property Type="Int64" Name="GroupID" Nullable="false" />
+          <Property Type="String" Name="GroupName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CsrID" Nullable="true" />
+          <Property Type="String" Name="RegNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GroupPrevNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="VillageWardNo" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="LandMark" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="MeetingDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MeetingPlace" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="UnitNo" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ActiveStatus" Nullable="true" />
+          <Property Type="Int32" Name="DeleteStatus" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LoanAppModelStoreContainer" CdmEntityContainer="LoanAPPEntities">
+          <EntitySetMapping Name="vwGroups">
+            <EntityTypeMapping TypeName="LoanAppModel.vwGroup">
+              <MappingFragment StoreEntitySet="vwGroup">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="CsrID" ColumnName="CsrID" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="GroupPrevNo" ColumnName="GroupPrevNo" />
+                <ScalarProperty Name="VillageWardNo" ColumnName="VillageWardNo" />
+                <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+                <ScalarProperty Name="UnitNo" ColumnName="UnitNo" />
+                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+                <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="prcAccounts" FunctionName="LoanAppModel.Store.prcAccounts" />
+          <FunctionImportMapping FunctionImportName="prcAccountsHead" FunctionName="LoanAppModel.Store.prcAccountsHead" />
+          <FunctionImportMapping FunctionImportName="prcBank" FunctionName="LoanAppModel.Store.prcBank" />
+          <FunctionImportMapping FunctionImportName="prcChangeAdminPass" FunctionName="LoanAppModel.Store.prcChangeAdminPass" />
+          <FunctionImportMapping FunctionImportName="prcClearData" FunctionName="LoanAppModel.Store.prcClearData" />
+          <FunctionImportMapping FunctionImportName="prcCSR" FunctionName="LoanAppModel.Store.prcCSR" />
+          <FunctionImportMapping FunctionImportName="prcCustomer" FunctionName="LoanAppModel.Store.prcCustomer" />
+          <FunctionImportMapping FunctionImportName="prcCustomerBank" FunctionName="LoanAppModel.Store.prcCustomerBank" />
+          <FunctionImportMapping FunctionImportName="prcCustomerCoBorrower" FunctionName="LoanAppModel.Store.prcCustomerCoBorrower" />
+          <FunctionImportMapping FunctionImportName="prcCustomerContact" FunctionName="LoanAppModel.Store.prcCustomerContact" />
+          <FunctionImportMapping FunctionImportName="prcCustomerGroup" FunctionName="LoanAppModel.Store.prcCustomerGroup" />
+          <FunctionImportMapping FunctionImportName="prcCustomerHouse" FunctionName="LoanAppModel.Store.prcCustomerHouse" />
+          <FunctionImportMapping FunctionImportName="prcCustomerInsuredPerson" FunctionName="LoanAppModel.Store.prcCustomerInsuredPerson" />
+          <FunctionImportMapping FunctionImportName="prcDocument" FunctionName="LoanAppModel.Store.prcDocument" />
+          <FunctionImportMapping FunctionImportName="prcExpense" FunctionName="LoanAppModel.Store.prcExpense" />
+          <FunctionImportMapping FunctionImportName="prcExpenseHead" FunctionName="LoanAppModel.Store.prcExpenseHead" />
+          <FunctionImportMapping FunctionImportName="prcGroup" FunctionName="LoanAppModel.Store.prcGroup" />
+          <FunctionImportMapping FunctionImportName="prcLoan" FunctionName="LoanAppModel.Store.prcLoan" />
+          <FunctionImportMapping FunctionImportName="prcLoanFunderType" FunctionName="LoanAppModel.Store.prcLoanFunderType" />
+          <FunctionImportMapping FunctionImportName="prcLoanPurposeType" FunctionName="LoanAppModel.Store.prcLoanPurposeType" />
+          <FunctionImportMapping FunctionImportName="prcMember" FunctionName="LoanAppModel.Store.prcMember" />
+          <FunctionImportMapping FunctionImportName="prcMemberBank" FunctionName="LoanAppModel.Store.prcMemberBank" />
+          <FunctionImportMapping FunctionImportName="prcMemberNominee" FunctionName="LoanAppModel.Store.prcMemberNominee" />
+          <FunctionImportMapping FunctionImportName="prcMemberTransaction" FunctionName="LoanAppModel.Store.prcMemberTransaction" />
+          <FunctionImportMapping FunctionImportName="prcProcessLoan" FunctionName="LoanAppModel.Store.prcProcessLoan" />
+          <FunctionImportMapping FunctionImportName="prcProduct" FunctionName="LoanAppModel.Store.prcProduct" />
+          <FunctionImportMapping FunctionImportName="prcQualification" FunctionName="LoanAppModel.Store.prcQualification" />
+          <FunctionImportMapping FunctionImportName="prcRateOfInterest" FunctionName="LoanAppModel.Store.prcRateOfInterest" />
+          <FunctionImportMapping FunctionImportName="prcRecoverLoan" FunctionName="LoanAppModel.Store.prcRecoverLoan" />
+          <FunctionImportMapping FunctionImportName="prcRecoverMultipleLoan" FunctionName="LoanAppModel.Store.prcRecoverMultipleLoan" />
+          <FunctionImportMapping FunctionImportName="prcRelation" FunctionName="LoanAppModel.Store.prcRelation" />
+          <FunctionImportMapping FunctionImportName="prGetCustomertLis" FunctionName="LoanAppModel.Store.prGetCustomertLis">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LoanAppModel.prGetCustomertLis_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prGetEmployee" FunctionName="LoanAppModel.Store.prGetEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LoanAppModel.prGetEmployee_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+                <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="prGetGroupDetails" FunctionName="LoanAppModel.Store.prGetGroupDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LoanAppModel.prGetGroupDetails_Result">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="CsrID" ColumnName="CsrID" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="GroupPrevNo" ColumnName="GroupPrevNo" />
+                <ScalarProperty Name="VillageWardNo" ColumnName="VillageWardNo" />
+                <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+                <ScalarProperty Name="UnitNo" ColumnName="UnitNo" />
+                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+                <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

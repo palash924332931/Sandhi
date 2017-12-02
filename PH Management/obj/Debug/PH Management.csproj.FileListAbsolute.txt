@@ -1,0 +1,48 @@
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\ApplicationInsights.config
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\csc.exe
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\vbc.exe
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\VBCSCompiler.exe
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\PH Management.dll.config
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\PH Management.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\PH Management.pdb
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.Web.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.ApplicationInsights.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Helpers.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Mvc.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Razor.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.Deployment.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.Razor.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.Web.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.ApplicationInsights.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Razor.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.Deployment.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Webpages.Razor.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Helpers.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\System.Web.Mvc.xml
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\obj\Debug\PH Management.csprojResolveAssemblyReference.cache
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\obj\Debug\PH Management.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\obj\Debug\PH Management.pdb
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\EntityFramework.dll
+C:\Users\sp\OneDrive\Demo Project\PH Management\PH Management\bin\EntityFramework.xml

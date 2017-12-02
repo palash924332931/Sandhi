@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoanAppModelStoreContainer" CdmEntityContainer="LoanAPPEntities">
+    <EntitySetMapping Name="vwGroups">
+      <EntityTypeMapping TypeName="LoanAppModel.vwGroup">
+        <MappingFragment StoreEntitySet="vwGroup">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="CsrID" ColumnName="CsrID" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="GroupPrevNo" ColumnName="GroupPrevNo" />
+          <ScalarProperty Name="VillageWardNo" ColumnName="VillageWardNo" />
+          <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+          <ScalarProperty Name="UnitNo" ColumnName="UnitNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="prcAccounts" FunctionName="LoanAppModel.Store.prcAccounts" />
+    <FunctionImportMapping FunctionImportName="prcAccountsHead" FunctionName="LoanAppModel.Store.prcAccountsHead" />
+    <FunctionImportMapping FunctionImportName="prcBank" FunctionName="LoanAppModel.Store.prcBank" />
+    <FunctionImportMapping FunctionImportName="prcChangeAdminPass" FunctionName="LoanAppModel.Store.prcChangeAdminPass" />
+    <FunctionImportMapping FunctionImportName="prcClearData" FunctionName="LoanAppModel.Store.prcClearData" />
+    <FunctionImportMapping FunctionImportName="prcCSR" FunctionName="LoanAppModel.Store.prcCSR" />
+    <FunctionImportMapping FunctionImportName="prcCustomer" FunctionName="LoanAppModel.Store.prcCustomer" />
+    <FunctionImportMapping FunctionImportName="prcCustomerBank" FunctionName="LoanAppModel.Store.prcCustomerBank" />
+    <FunctionImportMapping FunctionImportName="prcCustomerCoBorrower" FunctionName="LoanAppModel.Store.prcCustomerCoBorrower" />
+    <FunctionImportMapping FunctionImportName="prcCustomerContact" FunctionName="LoanAppModel.Store.prcCustomerContact" />
+    <FunctionImportMapping FunctionImportName="prcCustomerGroup" FunctionName="LoanAppModel.Store.prcCustomerGroup" />
+    <FunctionImportMapping FunctionImportName="prcCustomerHouse" FunctionName="LoanAppModel.Store.prcCustomerHouse" />
+    <FunctionImportMapping FunctionImportName="prcCustomerInsuredPerson" FunctionName="LoanAppModel.Store.prcCustomerInsuredPerson" />
+    <FunctionImportMapping FunctionImportName="prcDocument" FunctionName="LoanAppModel.Store.prcDocument" />
+    <FunctionImportMapping FunctionImportName="prcExpense" FunctionName="LoanAppModel.Store.prcExpense" />
+    <FunctionImportMapping FunctionImportName="prcExpenseHead" FunctionName="LoanAppModel.Store.prcExpenseHead" />
+    <FunctionImportMapping FunctionImportName="prcGroup" FunctionName="LoanAppModel.Store.prcGroup" />
+    <FunctionImportMapping FunctionImportName="prcLoan" FunctionName="LoanAppModel.Store.prcLoan" />
+    <FunctionImportMapping FunctionImportName="prcLoanFunderType" FunctionName="LoanAppModel.Store.prcLoanFunderType" />
+    <FunctionImportMapping FunctionImportName="prcLoanPurposeType" FunctionName="LoanAppModel.Store.prcLoanPurposeType" />
+    <FunctionImportMapping FunctionImportName="prcMember" FunctionName="LoanAppModel.Store.prcMember" />
+    <FunctionImportMapping FunctionImportName="prcMemberBank" FunctionName="LoanAppModel.Store.prcMemberBank" />
+    <FunctionImportMapping FunctionImportName="prcMemberNominee" FunctionName="LoanAppModel.Store.prcMemberNominee" />
+    <FunctionImportMapping FunctionImportName="prcMemberTransaction" FunctionName="LoanAppModel.Store.prcMemberTransaction" />
+    <FunctionImportMapping FunctionImportName="prcProcessLoan" FunctionName="LoanAppModel.Store.prcProcessLoan" />
+    <FunctionImportMapping FunctionImportName="prcProduct" FunctionName="LoanAppModel.Store.prcProduct" />
+    <FunctionImportMapping FunctionImportName="prcQualification" FunctionName="LoanAppModel.Store.prcQualification" />
+    <FunctionImportMapping FunctionImportName="prcRateOfInterest" FunctionName="LoanAppModel.Store.prcRateOfInterest" />
+    <FunctionImportMapping FunctionImportName="prcRecoverLoan" FunctionName="LoanAppModel.Store.prcRecoverLoan" />
+    <FunctionImportMapping FunctionImportName="prcRecoverMultipleLoan" FunctionName="LoanAppModel.Store.prcRecoverMultipleLoan" />
+    <FunctionImportMapping FunctionImportName="prcRelation" FunctionName="LoanAppModel.Store.prcRelation" />
+    <FunctionImportMapping FunctionImportName="prGetCustomertLis" FunctionName="LoanAppModel.Store.prGetCustomertLis">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LoanAppModel.prGetCustomertLis_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+          <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prGetEmployee" FunctionName="LoanAppModel.Store.prGetEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LoanAppModel.prGetEmployee_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNo" ColumnName="CustomerNo" />
+          <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="prGetGroupDetails" FunctionName="LoanAppModel.Store.prGetGroupDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LoanAppModel.prGetGroupDetails_Result">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="CsrID" ColumnName="CsrID" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="GroupPrevNo" ColumnName="GroupPrevNo" />
+          <ScalarProperty Name="VillageWardNo" ColumnName="VillageWardNo" />
+          <ScalarProperty Name="LandMark" ColumnName="LandMark" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+          <ScalarProperty Name="UnitNo" ColumnName="UnitNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
